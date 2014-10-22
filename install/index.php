@@ -105,12 +105,25 @@ Class ad extends CModule
 
 	function InstallFiles($arParams = array())
 	{
+		global $DB;
+
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/admin", $_SERVER["DOCUMENT_ROOT"]."/bitrix/admin");
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/themes", $_SERVER["DOCUMENT_ROOT"]."/bitrix/themes", true, true);
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/images", $_SERVER["DOCUMENT_ROOT"]."/bitrix/images/ad", true, true);
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/components", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
+		CopyDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/js", $_SERVER["DOCUMENT_ROOT"]."/bitrix/js/ad", true, true);
 
 		return true;
 	}
 
 	function UnInstallFiles()
 	{
+		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/admin/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/admin");
+		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/themes/.default/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/themes/.default");//css
+		DeleteDirFilesEx("/bitrix/themes/.default/icons/ad/");//icons
+		DeleteDirFilesEx("/bitrix/images/ad/");//images
+		DeleteDirFilesEx("/bitrix/js/ad/");//js
+		DeleteDirFiles($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/public/tools/", $_SERVER["DOCUMENT_ROOT"]."/bitrix/tools/");
 
 		return true;
 	}
@@ -125,6 +138,7 @@ Class ad extends CModule
 		{
 			if($this->InstallDB()) 
 			{
+				$this->InstallFiles();
 				$APPLICATION->IncludeAdminFile(GetMessage("AD_INSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/step.php");
 			}
 			$GLOBALS["errors"] = $this->errors;
@@ -145,6 +159,7 @@ Class ad extends CModule
 			elseif($step == 2)
 			{
 				$this->UnInstallDB();
+				$this->UnInstallFiles();
 				$GLOBALS["errors"] = $this->errors;
 				$APPLICATION->IncludeAdminFile(GetMessage("AD_UNINSTALL_TITLE"), $_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/ad/install/unstep.php");
 			}
