@@ -11,3 +11,13 @@ create table if not exists b_ad (
 	DESCRIPTION text,
 	IMAGE_ID int(18),
 	primary key (ID));
+
+INSERT INTO b_ad (
+URL,
+TITLE,
+DESCRIPTION
+)
+VALUES 
+('test1', 'Продам тест1',  'Описание продажи теста1'), 
+('test2', 'Продам тест2',  'Описание продажи теста2'), 
+('test3', 'Продам тест3',  'Описание продажи теста3');

@@ -1,7 +1,6 @@
 <?
-$MESS["AD_ID"] = "ID объявления";
-$MESS["F_AD_SECONDS"] = "секунд";
-$MESS["F_AD_MINUTES"] = "минут";
-$MESS["F_AD_HOURS"] = "часов";
-$MESS["F_AD_DAYS"] = "дней";
+$MESS ["AD_ID"] = "ID объявления";
+$MESS ['AD_NEW_PARAMS_NAME'] = "Настройки компонента";
+$MESS ['AD_HOW_MANY_NAME'] = "Количество объявлений";
+$MESS ['AD_SHOW_DESCRIPTION_NAME'] = "Показывать детали объявлений";
 ?>

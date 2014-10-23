@@ -1,3 +1,3 @@
 <?
-$MESS['TEST_MESSAGE'] = "My test message";
+$MESS['TEST_MESSAGE'] = "Ad portal";
 ?>

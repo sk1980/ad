@@ -1,7 +1,18 @@
 .ad-test 
 {
-	background-color: gray;
+	background-color: LightGray;
 	border-radius:20px;
 	padding:20px;
 	box-shadow: 0px 0px 10px gray;
+}
+
+.ad-test H2
+{
+ font-size:150%;
+}
+
+.ad-test a
+{
+ color:blue;
+ font-size:110%;
 }
