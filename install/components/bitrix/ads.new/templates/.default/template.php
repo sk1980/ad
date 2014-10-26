@@ -12,7 +12,7 @@ if (!is_array($arResult["arText"]) || count($arResult["arText"]) < 1)
 	<ul>
 		<?foreach($arResult["arText"] as $index => $arItem):?>
 
-			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["NAME"]?></a><?if ($arParams["SHOW_DESCRIPTION"] == "Y" && strlen($arItem["DESCRIPTION"]) > 0) {?><div><?=$arItem["DESCRIPTION"]?></div><?}?></li>
+			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["NAME"]?></a><?if ($arParams["SHOW_DESCRIPTION"] == "Y" && strlen($arItem["DESCRIPTION"]) > 0) {?><div><?=$arItem["DESCRIPTION"]?><br><b><?=$arItem["PHONE"]?></b></div><?}?></li>
 
 		<?endforeach?>
 	</ul>
