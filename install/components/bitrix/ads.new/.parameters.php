@@ -25,6 +25,29 @@ $arComponentParameters = array(
 			"DEFAULT" => "N",	
 			"PARENT" => "AD_NEW_PARAMS",
 		),
+
+		"SEF_MODE" => Array(
+			"index" => array(
+				"NAME" => GetMessage("AD_INDEX_PAGE"),
+				"DEFAULT" => "ads.php",
+				"VARIABLES" => array()),
+
+			"ads" => array(
+				"NAME" => GetMessage("AD_PAGE"),
+				"DEFAULT" => "ads.php",
+				"VARIABLES" => array()),
+
+			"ad_edit" => array(
+				"NAME" => GetMessage("AD_EDIT_PAGE"),
+				"DEFAULT" => "ads.php",
+				"VARIABLES" => array("ACTION")),
+
+			"add" => array(
+				"NAME" => GetMessage("AD_ADD_PAGE"),
+				"DEFAULT" => "ads.php",
+				"VARIABLES" => array("SECTION_ID"))
+			),
+
 		
 		"SET_TITLE" => array(),
 		"CACHE_TIME" => array("DEFAULT" => "3600"),

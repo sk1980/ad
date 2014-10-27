@@ -84,6 +84,8 @@ if($ex = $APPLICATION->GetException())
 	));
 else
 	echo CAdminMessage::ShowNote(GetMessage("MOD_INST_OK"));
+
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", Array("ad", "OnBeforeIBlockElementAddHandler")); 
 ?>
 <form action="<?echo $APPLICATION->GetCurPage()?>">
 	<input type="hidden" name="lang" value="<?echo LANG?>">

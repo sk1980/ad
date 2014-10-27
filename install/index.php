@@ -167,6 +167,12 @@ Class ad extends CModule
 		}
 	}
 
+	function OnBeforeIBlockElementAddHandler(&$arFields) 
+	{ 
+	echo $arFields["ACTIVE"]."<--";
+        $arFields["ACTIVE"]="Y";
+
+	} 
 
 }
 ?>
