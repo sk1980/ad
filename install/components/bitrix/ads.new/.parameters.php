@@ -28,24 +28,37 @@ $arComponentParameters = array(
 
 		"SEF_MODE" => Array(
 			"index" => array(
-				"NAME" => GetMessage("AD_INDEX_PAGE"),
-				"DEFAULT" => "ads.php",
+				"NAME" => GetMessage("INDEX_PAGE"),
+				"DEFAULT" => "index.php",
 				"VARIABLES" => array()),
-
-			"ads" => array(
-				"NAME" => GetMessage("AD_PAGE"),
-				"DEFAULT" => "ads.php",
-				"VARIABLES" => array()),
-
-			"ad_edit" => array(
-				"NAME" => GetMessage("AD_EDIT_PAGE"),
-				"DEFAULT" => "ads.php",
-				"VARIABLES" => array("ACTION")),
-
-			"add" => array(
-				"NAME" => GetMessage("AD_ADD_PAGE"),
-				"DEFAULT" => "ads.php",
-				"VARIABLES" => array("SECTION_ID"))
+			"section" => array(
+				"NAME" => GetMessage("SECTION_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/",
+				"VARIABLES" => array("SECTION_ID")),
+			"section_edit" => array(
+				"NAME" => GetMessage("SECTION_EDIT_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/action/#ACTION#/",
+				"VARIABLES" => array("SECTION_ID", "ACTION")),
+			"section_edit_icon" => array(
+				"NAME" => GetMessage("SECTION_EDIT_ICON_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/icon/action/#ACTION#/",
+				"VARIABLES" => array("SECTION_ID", "ACTION")),
+			"upload" => array(
+				"NAME" => GetMessage("UPLOAD_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/action/upload/",
+				"VARIABLES" => array("SECTION_ID")),
+			"detail" => array(
+				"NAME" => GetMessage("DETAIL_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/#ELEMENT_ID#/",
+				"VARIABLES" => array("ELEMENT_ID", "SECTION_ID")),
+			"detail_edit" => array(
+				"NAME" => GetMessage("DETAIL_EDIT_PAGE"),
+				"DEFAULT" => "#SECTION_ID#/#ELEMENT_ID#/action/#ACTION#/",
+				"VARIABLES" => array("ELEMENT_ID", "SECTION_ID")),
+			"detail_list" => array(
+				"NAME" => GetMessage("DETAIL_LIST_PAGE"),
+				"DEFAULT" => "list/",
+				"VARIABLES" => array())
 			),
 
 		
